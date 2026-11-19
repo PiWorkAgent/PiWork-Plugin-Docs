@@ -13,22 +13,22 @@ manifest.json + 一张静态网页，没有 backend、没有工具、没有构�
 
 ## 文档来源（单一事实源）
 
-正文是仓库的 `docs/plugin-dev-guide.md`，由脚本同步进面板：
+正文是本仓库的 `docs/plugin-dev-guide.md`，由脚本同步进面板（在仓库根目录执行）：
 
 ```bash
 node scripts/sync-devdocs.mjs
 ```
 
-该脚本同时把 marked（markdown 渲染，MIT）从 workspace 依赖拷到 `ui/lib/`。
+该脚本同时把 marked（markdown 渲染，MIT）从仓库根目录的 `node_modules` 拷到 `ui/lib/`。
 **不要直接改 `ui/docs/` 下的文件** — 下一次同步会覆盖。
 
 ## 发布流程
 
 改完 `docs/plugin-dev-guide.md` 后：
 
-1. `node scripts/sync-devdocs.mjs`
+1. `node scripts/sync-devdocs.mjs`（先 `npm install`，marked 来自根目录依赖）
 2. bump `manifest.json` 的 `version`
-3. `node scripts/build-market.mjs` — 装了旧版的客户端会在插件中心看到「可更新」
+3. 提交后推送 tag `v<version>`（或手动运行 Release 工作流）— 装了旧版的客户端会在插件中心看到「可更新」
 
 ## 新增一篇文档
 

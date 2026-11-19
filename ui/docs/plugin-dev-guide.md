@@ -83,7 +83,7 @@
 ### 开始之前
 
 - 装有 Node.js 20 或更新版本。
-- 插件 SDK（`@pi/plugin-sdk`）目前还没有发布到 npm，随仓库分发。你的插件通过**路径依赖**指向仓库里的 `packages/plugin-sdk`（第 2 步会写），打包时 SDK 会被并进你的后端文件，发布插件时不需要仓库存在。
+- 插件 SDK 已发布到 npm：`@pi/plugin-sdk`。用普通版本依赖安装即可（第 2 步会写），打包时 SDK 会被并进你的后端文件，运行时不需要它。
 
 ### 第 1 步 · 建目录
 
@@ -114,7 +114,7 @@ com.example.note/
   "private": true,
   "type": "module",
   "dependencies": {
-    "@pi/plugin-sdk": "file:/换成你的实际路径/PiWork/packages/plugin-sdk"
+    "@pi/plugin-sdk": "^0.1.0"
   },
   "devDependencies": {
     "esbuild": "^0.24.0"
