@@ -83,7 +83,7 @@
 ### 开始之前
 
 - 装有 Node.js 20 或更新版本。
-- 插件 SDK 已发布到 npm：`@pi/plugin-sdk`。用普通版本依赖安装即可（第 2 步会写），打包时 SDK 会被并进你的后端文件，运行时不需要它。
+- 插件 SDK 已发布到 npm（包名 `@weiqun789/plugin-sdk`）。用 **npm 别名**按 `@pi/plugin-sdk` 安装（第 2 步会写），这样源码里的 import 路径保持统一；打包时 SDK 会被并进你的后端文件，运行时不需要它。
 
 ### 第 1 步 · 建目录
 
@@ -114,7 +114,7 @@ com.example.note/
   "private": true,
   "type": "module",
   "dependencies": {
-    "@pi/plugin-sdk": "^0.1.0"
+    "@pi/plugin-sdk": "npm:@weiqun789/plugin-sdk@^0.1.0"
   },
   "devDependencies": {
     "esbuild": "^0.24.0"
