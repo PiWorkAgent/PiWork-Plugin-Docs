@@ -854,7 +854,7 @@ await import('./dist/main.mjs');               // SDK 在导入时接管
 
 现成的样板：
 
-- SDK 自己的契约测试（21 项，覆盖每一条报错路径）：先 `pnpm --filter @pi/plugin-sdk build`，再 `node packages/plugin-sdk/tests/smoke.mjs`。测试加载的是 `dist/`，改了 SDK 源码不重建会测到旧代码。
+- SDK 自己的契约测试（21 项，覆盖每一条报错路径）：先 `pnpm --filter @weiqun789/plugin-sdk build`（源码在 PiWork 仓库的 `packages/plugin-sdk`），再 `node packages/plugin-sdk/tests/smoke.mjs`。测试加载的是 `dist/`，改了 SDK 源码不重建会测到旧代码。
 - 各官方后端的自测：`node plugins/com.pi.tasks/scripts/smoke-backend.mjs`（browser / files 也有同名脚本）。它们加载各自的 `dist/main.mjs`，改过后端要先重新构建该插件。
 
 ### 常见坑速查
